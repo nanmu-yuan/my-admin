@@ -1,0 +1,17 @@
+* {
+    transition: all 0.3s;
+    user-select: none;
+  }
+  
+#box{
+    color: blue;
+    display: flex;
+    flex-wrap: nowrap;
+    .fix_font{
+        font: 12px;
+        text-size-adjust:100%
+    }
+    .sl{
+        transform: translateX(10px);
+    }
+}
