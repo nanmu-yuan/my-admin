@@ -16,9 +16,9 @@ const getCssLoaders = () => {
         {
             loader: 'css-loader',
             options: {
-                modules: {
-                    localIdentName: "[local]__[hash:base64:5]",//设置class 名称hash化;[文件名称]__[类名称]__[五位的hash值]
-                },
+                // modules: {
+                //     localIdentName: "[local]__[hash:base64:5]",//设置class 名称hash化;[文件名称]__[类名称]__[五位的hash值]
+                // },
                 sourceMap: isDevelopment,
                 importLoaders: 2
             }
@@ -140,4 +140,3 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.json'],
     }
 }
-console.log(module)
