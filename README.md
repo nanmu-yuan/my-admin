@@ -22,7 +22,38 @@ chunkHash：根据chunk生成的hash值，如果打包来源于同一个chunk，
 contenthash：根据文件内容生成hash值，不同文件的hash值一定不一样（只要文件内容不做修改，一定是同一个hash，有变动则会替换成另外的）
 ，这样就令浏览器只清楚掉变动文件的缓存（只有改动的文件重命名了）
  
-
-
-
  ### node --16.18.0
+
+### 采用react-router-dom 的history 模式，前端本地开发一直报错；
+解决办法：
+  output:{
+        filename:'js/[name].js',
+        path:resolve('./dist'),
+        publicPath:'/' // 设置请求文件的根目录
+    },
+    devServer:{
+        static:"./dist",
+        host:'127.0.0.1',
+        port:'8888',
+        compress:true,
+        open:true,
+        hot:true,
+        historyApiFallback:true // 开启向后台发送请求未响应时，放回带index.html 首页
+   
+    },
+### 引入antd 的全局样式时，less 文件编译一直报错
+
+是因为  less-loader  版本太高了。。。。
+  {
+                test: /\.less$/,
+                use: [
+                    ...getCssLoaders(),
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            sourceMap: isDevelopment,
+                            javascriptEnabled: true //   启用内联JavaScript。它在你的选项中设置了吗？
+                        }
+                    }
+                ]
+            },

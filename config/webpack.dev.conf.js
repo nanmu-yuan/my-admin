@@ -8,7 +8,8 @@ module.exports = merge(baseConf,{
     devtool:'cheap-module-source-map',//启动 source- map 的模式，如果代码发生错误则在浏览器上映射到对应错误地方
     output:{
         filename:'js/[name].js',
-        path:resolve('./dist')
+        path:resolve('./dist'),
+        publicPath:'/'
     },
     devServer:{
         static:"./dist",
@@ -17,7 +18,7 @@ module.exports = merge(baseConf,{
         compress:true,
         open:true,
         hot:true,
-        https:true
+        historyApiFallback:true
    
     },
     plugins:[

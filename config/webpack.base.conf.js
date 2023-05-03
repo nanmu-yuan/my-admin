@@ -105,7 +105,8 @@ module.exports = {
                     {
                         loader: 'less-loader',
                         options: {
-                            sourceMap: isDevelopment
+                            sourceMap: isDevelopment,
+                            javascriptEnabled: true
                         }
                     }
                 ]
@@ -139,3 +140,4 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.json'],
     }
 }
+console.log(module)
